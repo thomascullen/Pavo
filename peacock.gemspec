@@ -1,15 +1,15 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "peacock/version"
+require "pavo/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "peacock"
-  s.version     = Peacock::VERSION
+  s.name        = "pavo"
+  s.version     = Pavo::VERSION
   s.authors     = ["Thomas Cullen"]
   s.email       = ["thomascullen92@gmail.com"]
-  s.homepage    = "http://www.thomascullen.io/peacock"
+  s.homepage    = "https://github.com/Thomascullen92/Pavo"
   s.summary     = "Living Style Guides"
   s.description = "Living Style Guides"
   s.license     = "MIT"
