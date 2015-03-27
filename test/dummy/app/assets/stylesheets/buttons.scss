@@ -1,0 +1,35 @@
+// -~ Getting Started | Introduction ~-
+// This is an example Styleguide. It provides guidelines for the use of UI Components within an app. This documentation is one of those living documentations. Its a live. It literaly has a fucking heart beat.
+// -~-
+.test{ display: block; }
+
+// -~ Branding | Colours ~-
+// Colours are very pretty
+// ```styleguide_colour
+// Brand Colour : #d64242 : $brand
+// ```
+// -~-
+
+// -~ Forms | Button ~-
+// Nam a ullamcorper ex. Vestibulum ut feugiat ex, a congue nibh. Curabitur et magna non quam imperdiet ultricies. Donec eu lacus eu enim luctus consequat. Vivamus ut massa sollicitudin, auctor tellus nec, interdum sem. Quisque quam justo, dictum at sapien nec, maximus feugiat magna. Nullam vestibulum laoreet posuere. Integer pellentesque tortor et tortor ornare, vel accumsan purus luctus. Aenean nisl nibh, porttitor sagittis risus ut, congue malesuada ipsum.
+// ```styleguide_html
+// <a href="#" class="button">Click Me</a>
+// ```
+// -~-
+.button{
+  color: #FFF;
+  border-radius: 5px;
+  background: #48b1c6;
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 10px 5px 10px;
+}
+
+// -~ Forms | Input ~-
+// Buttons rock
+// ```styleguide_html
+// <input type='text' placeholder='testing'/>
+// ```
+// -~-

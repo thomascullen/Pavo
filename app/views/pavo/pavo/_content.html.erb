@@ -1,0 +1,10 @@
+<div class='pavo-content'>
+  <% @sections.each do |category, section| %>
+      <% section.each do |section, content| %>
+        <div class='pavo-section-content'>
+          <h1 id="<%= section %>" class='pavo-section-title'><%= section %></h1>
+          <%= styleguide_content content %>
+        </div>
+      <% end %>
+  <% end %>
+</div>
