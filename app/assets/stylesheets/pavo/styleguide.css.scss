@@ -60,7 +60,16 @@
   }
 
   .pavo-content{
+    font-size: 16px;
     padding-left: 20%;
+    line-height: 30px;
+
+    h1,h2,h3,h4,h5,h6,p{ @include StyleguideFont }
+
+    h1{
+      font-size: 32px;
+      font-weight: 300;
+    }
 
     .styleguide-example-wrapper{
       overflow: hidden;
@@ -68,8 +77,8 @@
       border: 1px solid #dadde2;
       box-shadow: 0 1px 3px rgba(26,53,71,.08);
 
-      pre{ margin: 0 0 0 0 }
-      pre code{ padding: 10px 20px 10px 20px }
+      pre{ margin: 0 0 0 0; line-height: 1; font-size: 13px }
+      pre code{ padding: 5px 20px 10px 20px }
 
       .styleguide-example{
         padding: 15px 15px 15px 15px;

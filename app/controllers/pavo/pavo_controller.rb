@@ -6,7 +6,7 @@ module Pavo
 
     # Renders the styleguide
     def styleguide
-      @sections = Pavo.config.sections
+      @categories = Pavo::Category.all
     end
 
     private

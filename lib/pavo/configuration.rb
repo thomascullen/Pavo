@@ -1,9 +1,9 @@
 module Pavo
   class Configuration
-    attr_accessor :paths, :sections, :renderer
+    attr_accessor :paths, :renderer, :categories
 
     def initialize
-      @sections = {}
+      @categories = {}
       @paths = []
       renderer = Pavo::Markdown.new(prettify: 'testing')
 

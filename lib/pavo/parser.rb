@@ -6,18 +6,18 @@ module Pavo
       # --
       # Interates through the configured paths and build the documentation
       def parse
-        Pavo.config.sections = {}
+        Pavo.config.categories = {}
         # Iterate through the configured paths
         Pavo.config.paths.each do |path|
           # if the directory exists
-          return unless Dir.exists?(path)
+          return unless Dir.exist?(path)
           # for each stylesheet in that directory
           Dir["#{path}/**/*.{css,less,sass,scss}"].each do |filename|
             parse_file(filename)
           end
         end
         # Return parsed sections
-        Pavo.config.sections
+        Pavo.config.categories
       end
 
       # parse_file
@@ -26,29 +26,33 @@ module Pavo
       def parse_file(file_path)
         File.open(file_path) do |file|
           inside_block = false
-          category = nil
-          section = nil
+          current_category = nil
+          current_section = nil
 
+          # for each line
           file.each_line do |line|
-            # Set inside block to true if the line contains an opening
-            # styleguide tag
+            # inside_block to false if line contains a closing styleguide tag
             if Pavo::Parser.end_block(line)
               inside_block = false
 
+            # if inside_block is true
             elsif inside_block
-              Pavo.config.sections[category][section] << Pavo::Parser.line(line)
+              current_section.content << Pavo::Parser.line(line)
 
+            # if stylguide block is founnd
             elsif Pavo::Parser.start_block(line)
               inside_block = true
               category = Pavo::Parser.category(line)
               section = Pavo::Parser.section(line)
 
-              Pavo.config.sections[category] = {} unless Pavo.config.sections[category]
-              Pavo.config.sections[category][section] = '' unless Pavo.config.sections[category][section]
+              Pavo.config.categories[category] ||= Pavo::Category.new(title: category)
+              current_category = Pavo.config.categories[category]
+              current_category.sections_hash[section] ||= Pavo::Section.new(title: section)
+              current_section = current_category.sections_hash[section]
             end
           end
         end
-        Pavo.config.sections
+        Pavo.config.categories
       end
 
       # start_block

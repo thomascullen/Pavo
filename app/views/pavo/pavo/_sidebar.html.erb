@@ -1,10 +1,10 @@
 <div class='pavo-sidebar'>
-  <% @sections.each do |category, section| %>
+  <% @categories.each do |category| %>
     <div class='pavo-section'>
-      <h5><%= category %></h5>
+      <h5><%= category.title %></h5>
       <ul>
-        <% section.keys.each do |section| %>
-          <li><%= link_to section, "##{section.gsub(/ /,'').underscore}" %></li>
+        <% category.sections.each do |section| %>
+          <li><%= link_to section.title, "#{section.href}" %></li>
         <% end %>
       </ul>
     </div>

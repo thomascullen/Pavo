@@ -1,9 +1,9 @@
 <div class='pavo-content'>
-  <% @sections.each do |category, section| %>
-      <% section.each do |section, content| %>
+  <% @categories.each do |category| %>
+      <% category.sections.each do |section| %>
         <div class='pavo-section-content'>
-          <h1 id="<%= section %>" class='pavo-section-title'><%= section %></h1>
-          <%= styleguide_content content %>
+          <h1 id="<%= section.id %>" class='pavo-section-title'><%= section.title %></h1>
+          <%= styleguide_content section.content %>
         </div>
       <% end %>
   <% end %>
