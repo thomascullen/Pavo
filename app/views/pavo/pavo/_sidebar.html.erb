@@ -1,8 +1,8 @@
-<div class='pavo-sidebar'>
+<div class='styleguide-sidebar'>
   <% @categories.each do |category| %>
-    <div class='pavo-section'>
-      <h5><%= category.title %></h5>
-      <ul>
+    <div class='styleguide-category'>
+      <h5 class='styleguide-category-title'><%= category.title %></h5>
+      <ul class='styleguide-category-sections'>
         <% category.sections.each do |section| %>
           <li><%= link_to section.title, "#{section.href}" %></li>
         <% end %>

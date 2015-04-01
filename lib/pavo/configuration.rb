@@ -1,22 +1,20 @@
+# Pavo
 module Pavo
+  # Pavo::Configuration
   class Configuration
-    attr_accessor :paths, :renderer, :categories
+    attr_accessor :paths, :renderer, :categories, :parse_on_each_request
 
     def initialize
       @categories = {}
       @paths = []
-      renderer = Pavo::Markdown.new(prettify: 'testing')
-
+      @parse_on_each_request = false
+      renderer = Pavo::Markdown.new(prettify: 'testing', hard_wrap: false)
       options = {
-        tables: true,
-        autolink: true,
-        fenced_code_blocks: true,
-        disable_indented_code_blocks: true
+        tables: true, autolink: true, no_intra_emphasis: true,
+        fenced_code_blocks: true, disable_indented_code_blocks: true
       }
-
       @renderer = Redcarpet::Markdown.new(renderer, options)
     end
-
   end
 
   class << self

@@ -1,10 +1,8 @@
-<div class='pavo-content'>
-  <% @categories.each do |category| %>
-      <% category.sections.each do |section| %>
-        <div class='pavo-section-content'>
-          <h1 id="<%= section.id %>" class='pavo-section-title'><%= section.title %></h1>
-          <%= styleguide_content section.content %>
-        </div>
-      <% end %>
-  <% end %>
-</div>
+<% @categories.each do |category| %>
+    <% category.sections.each do |section| %>
+      <div class='styleguide-content' id="<%= section.href %>">
+        <h1 id="<%= section.id %>" class='styleguide-content-title'><%= section.title %></h1>
+        <%= styleguide_content section.content %>
+      </div>
+    <% end %>
+<% end %>

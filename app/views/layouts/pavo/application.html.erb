@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Styleguide</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag 'application' %>
-  <%= stylesheet_link_tag    "pavo/application", media: "all" %>
-  <%= javascript_include_tag "pavo/application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body id="pavo-styleguide">
-
-  <%= yield %>
-
-</body>
+  <head>
+    <title>Styleguide</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    "pavo/application", media: "all" %>
+    <%= javascript_include_tag "pavo/application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  
+  <body id="styleguide">
+    <%= yield %>
+  </body>
 </html>
